@@ -1,0 +1,14 @@
+# Python 3.10 with NVIDIA CUDA 12.8.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.10.0+cu128
+torchvision==0.25.0+cu128
+stable-worldmodel[train,env]==0.1.1
+stable-pretraining==0.1.8
+# The published ViT state_dict uses Transformers 4.x parameter names.
+transformers==4.57.6
+datasets==4.4.2
+h5py==3.16.0
+hdf5plugin==7.1.0
+imageio[ffmpeg]==2.38.0
+# MuJoCo 3.12+ is incompatible with gymnasium-robotics 1.4.2 joint checks.
+mujoco==3.11.0
