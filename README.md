@@ -11,7 +11,7 @@
 ## 获取完整项目
 
 ```powershell
-git clone --recurse-submodules <本项目的远程仓库地址>
+git clone --recurse-submodules http://1.95.9.8/ug_projects/lewm_door_handle_manipulation.git
 ```
 
 如果已经克隆主仓库：
