@@ -1,0 +1,3 @@
+[submodule "lewm"]
+	path = lewm
+	url = https://github.com/lucas-maes/le-wm.git
