@@ -1,0 +1,8 @@
+{
+  "include": ["mujoco_gripper_demo", "lewm"],
+  "exclude": ["**/__pycache__", ".venv", ".python", ".cache"],
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.10",
+  "extraPaths": [".", "lewm"]
+}

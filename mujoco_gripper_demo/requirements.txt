@@ -1,0 +1,8 @@
+# Standalone CPU demo; Python 3.10.
+robosuite==1.5.2
+# robosuite 1.5.2 requires the older mj_fullM API.
+mujoco==3.3.0
+numpy==1.26.4
+matplotlib==3.10.9
+# Preserve compatibility with NumPy 1.x.
+opencv-python==4.11.0.86

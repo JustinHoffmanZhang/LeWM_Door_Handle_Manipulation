@@ -10,5 +10,13 @@ datasets==4.4.2
 h5py==3.16.0
 hdf5plugin==7.1.0
 imageio[ffmpeg]==2.38.0
-# MuJoCo 3.12+ is incompatible with gymnasium-robotics 1.4.2 joint checks.
-mujoco==3.11.0
+# robosuite 1.5.2 uses the pre-3.10 mj_fullM API. Keep dm-control aligned.
+mujoco==3.3.0
+dm-control==1.0.28
+robosuite==1.5.2
+pybullet==3.2.7
+# mink (robosuite dependency) requires NumPy 1.x. Both OpenCV distributions
+# are required by upstream packages; keep their shared cv2 files aligned.
+numpy==1.26.4
+opencv-python==4.11.0.86
+opencv-python-headless==4.11.0.86
