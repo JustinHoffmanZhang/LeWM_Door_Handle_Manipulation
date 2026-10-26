@@ -4,6 +4,22 @@
 
 ## 安装与运行
 
+### Linux
+
+当前 Linux 环境位于项目根目录 `LeWM_Door_Handle_Manipulation/.venv/`，使用 Python 3.10、MuJoCo 3.3.0 和 robosuite 1.5.2。在项目根目录运行：
+
+```bash
+source .venv/bin/activate
+PYTHONPATH= python mujoco_gripper_demo/demo.py --headless  # 无窗口验证抓取
+PYTHONPATH= python mujoco_gripper_demo/demo.py             # 打开图形窗口，按 R 重播
+```
+
+当前终端加载了 ROS Jazzy 的 Python 3.12 路径；`PYTHONPATH=` 仅在本次命令中清空外部包路径，避免混入 Python 3.10 环境。
+
+需要重新安装演示依赖时，在已激活的环境中执行 `PYTHONPATH= python -m pip install -r mujoco_gripper_demo/requirements.txt`。
+
+### Windows
+
 在项目根目录的 PowerShell 中执行一次安装（需要 `uv`）：
 
 ```powershell

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adapted from robosuite 1.5.2 objects/door_lock.xml; see ../NOTICE.md.
+     All angles are radians in the assembled robosuite model.
+     The latch is blocked by the left frame post through physical contact.
+     There is no actuator or software lock on either object joint. -->
+<mujoco model="lever_door">
+  <compiler angle="radian"/>
+  <worldbody>
+    <body>
+      <body name="object">
+        <body name="frame" pos="0 0.22 0" quat="0.707388 0 0 -0.706825">
+          <geom name="r_frame" type="cylinder" size="0.03 0.3" pos="0.555 0 0" group="0" rgba="0.24 0.28 0.32 1"/>
+          <geom name="l_frame" type="cylinder" size="0.03 0.3" pos="0.045 0 0" group="0" rgba="0.24 0.28 0.32 1"/>
+          <geom name="top_frame" type="box" size="0.285 0.03 0.025" pos="0.3 0 0.325" group="0" rgba="0.24 0.28 0.32 1"/>
+          <body name="door" pos="0.3 0 0">
+            <inertial pos="0.0296816 -0.00152345 0" quat="0.701072 0 0 0.713091" mass="2.43455" diaginertia="0.0913751 0.0521615 0.043714"/>
+            <joint name="hinge" type="hinge" pos="0.255 0 0" axis="0 0 1" range="0 1.57079632679" damping="0.1" frictionloss="0.02" limited="true"/>
+            <geom name="panel" type="box" size="0.22 0.02 0.29" friction="1 0.005 0.0001" group="0" rgba="0.25 0.48 0.61 1"/>
+            <body name="latch" pos="-0.175 0 -0.025">
+              <inertial pos="-0.017762 0.0138544 0" quat="0.365653 0.605347 -0.36522 0.605365" mass="0.1" diaginertia="0.0483771 0.0410001 0.0111013"/>
+              <joint name="latch_joint" type="hinge" axis="0 1 0" range="-1.57 1.57" frictionloss="0.1" damping="0.05" limited="true" springref="0" stiffness="1"/>
+              <geom name="handle_base" type="cylinder" fromto="0 0.0625 0 0 -0.125 0" size="0.025" group="0" rgba="0.75 0.78 0.8 1"/>
+              <geom name="handle" type="box" size="0.075 0.015 0.02" pos="0.075 -0.10 0" friction="1 0.005 0.0001" group="0" rgba="0.9 0.65 0.22 1"/>
+              <geom name="latch" type="box" size="0.025 0.0125 0.03125" pos="-0.03125 0.05 0" quat="0.707388 0 0.706825 0" group="0" rgba="0.75 0.78 0.8 1"/>
+              <geom name="latch_tip" type="cylinder" size="0.025 0.0125" pos="-0.0625 0.05 0" quat="0.707388 0.706825 0 0" group="0" rgba="0.75 0.78 0.8 1"/>
+              <site name="handle" pos="0.125 -0.10 0" size="0.008" rgba="0 1 0 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <site name="bottom_site" pos="0 0 -0.3" size="0.005" rgba="0 0 0 0"/>
+      <site name="top_site" pos="0 0 0.35" size="0.005" rgba="0 0 0 0"/>
+      <site name="horizontal_radius_site" pos="0.6 0 0" size="0.1" rgba="0 0 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>
